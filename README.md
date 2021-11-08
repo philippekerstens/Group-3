@@ -1,5 +1,10 @@
 # Group-3
 
+## Purpose:
+The purpose of this project is to help identify hospital systems that may need a reallocation of resources.  THe covid-19 pandemic has placed an incredible burden on the US healthcare system.  There is much evidence that many healthsystems are running low on hospital beds.  Through the covid 19 data we have analyzed, we hope to be able to predict whether a county's health system is at capacity or not.  This information could then be used to reassess the distribution of limited resources within the county.
+
+## Data:
+Our data is being sourced from a multitude of sources.  Primarily the data is coming from the cdc, healthdata.gov, and the New York Times.  Links to several of the data sources can be seen below.
 ## Data Links:
 
 1. https://apidocs.covidactnow.org/ - API for covid data
