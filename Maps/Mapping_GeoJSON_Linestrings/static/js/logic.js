@@ -103,3 +103,5 @@ d3.json(usCounties).then(function(data) {
 // Creating a GeoJSON layer with the retrieved data.
 L.geoJson(data).addTo(map);
 });
+
+console.log(usCounties['geometry']);
