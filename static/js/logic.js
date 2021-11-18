@@ -104,4 +104,4 @@ d3.json(usCounties).then(function(data) {
 L.geoJson(data).addTo(map);
 });
 
-console.log(usCounties['geometry']);
+console.log(usCounties.features.properties.city);

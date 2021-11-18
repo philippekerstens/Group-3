@@ -25,9 +25,10 @@
 <body>
     <div class="wrapper">
         <!-- Build the nav-bar -->
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="index.html">Home</a>
             <a class="nav-item nav-link" href="page2.html">Interactive Maps</a>
+            <a class="nav-item nav-link" href="page3.html">Interactive Charts</a>
         </nav>
         <!-- The jumbotron div -->
         <div class='jumbotron'>
@@ -38,13 +39,35 @@
             <div class="row">
                 <div class="col-md-1">
                     <h3>Purpose</h3>
-                  </div>
-                  <div class="col-md-11">
+                </div>
+                <div class="col-md-9">
                     <p>
                       The purpose of this dashboard is to...
                     </p>
+                </div>
+                <div class='col-md-2'>  <!--Build the table-->
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                          Top 10 by county:
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Cases</a>
+                          <a class="dropdown-item" href="#">Deaths</a>
+                          
+                        </div>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>County</th>
+                            <th>Cases</th>
+                          </tr>
+                        </thead>
+                        <tbody></tbody>
+                      </table>
+                </div>
+                
             </div>
-          </div>
         </div>
     </div>  
 
