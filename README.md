@@ -6,7 +6,12 @@
 ## Why this project
 ### This project focus was chosen as we wished to choose something relevant to our current times and events, and in regards of covid, we discovered the potential for improving and avoiding these issues in the future, or at least aiding those that wish to avoid such crisises again.
 ## Links and Sources
-### [insert link 1 & 2]
+### Slideshow  : https://docs.google.com/presentation/d/19MMd_3xDyaQTVIac4mx9ayKighQCOw1OY78eupEQc3c/edit?usp=sharing
+### Database 1 : https://apidocs.covidactnow.org/ - API for covid data
+### Database 2 : https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/anag-cw7u - hospital aggregated data
+### Database 3 : https://github.com/nytimes/covid-19-data - NYT data github page
+### Database 4 : https://github.com/owid/covid-19-data - One World Data github page
+### Database 5 : https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-County/8xkx-amqh - Vaccination data (CDC) 
 ## Questions - 
 ## Project Timeline
 ### Monday 1st
