@@ -29,3 +29,7 @@
 #### Another issue arose in regards to connecting county id and the FIP codes however this was partially resolved with aid of Professor Heather 
 ### Monday 8th
 #### Group discussions and brainstorming was held in regards to problems in the databasess but were able to import them successfully
+### Wednesday 10th
+### Monday 15th
+### Wednesday 17th
+#### database updated
