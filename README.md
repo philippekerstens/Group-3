@@ -20,7 +20,7 @@ Both data sets were loaded into S3 buckets. String data type columns were remove
 
 2. Preliminary feature of engineering:
 
-Linear regression 1 model is designed to predict number of icu beds needs for COVID patient for facilities. Since our data is collected in week base, users can input past weeks data (number of beds used)  into the model to predict the number of beds that will be used for upcoming week. Linear regression model 2 model is designed to predict the number of deaths through the number of cases. The number of cases and deaths per week are selected for linear regression model and it will estimate the relationship between independent variable(cases) and one dependent variable(deaths). Additionally, for linear regression model 2, another variable (adult patients who are in ICU bed for COVID) is added to give further estimation of correlation of death and thr rest two variables. 
+Linear regression 1 model is designed to predict number of beds needs for COVID patient for facilities. Since our data is collected in weekly base, users can input past weeks data (number of patients who are or might have COVID-19)  into the model to predict the number of beds that will be used for upcoming week. Linear regression model 2 model is designed to predict the number of deaths through the number of cases. The number of cases and deaths per week are selected for linear regression model and it will estimate the relationship between independent variable(cases) and one dependent variable(deaths). Additionally, for linear regression model 2, another variable (adult patients who are in ICU bed for COVID) is added to give further estimation of correlation of death and thr rest two variables. 
 
 3. How data was split into training and testing sets:
 
