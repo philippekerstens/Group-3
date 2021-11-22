@@ -20,3 +20,10 @@
 ALTER TABLE counties ADD PRIMARY KEY (fips_date); ALTER TABLE hospitals ADD PRIMARY KEY (fips_date);
 4. Run the PLACEHOLDER TEXT notebook in its entirety to join the tables and connect the database to the machine learning model.
 
+## Dashboard:
+The layout of the dashboard can be viewed on our google slide presentation deck.  
+### Technology for the dashboard:
+The dashboard is being created using a flask app that is able to tap into our SQL database.  One we have acheived a connection to our database, we will be querying the data to use in our interactive map and charts on page 2 and 3 respectively.  We are using bootsrap and some custom CSS to sylyze the dashboard.  We are using D3 and javascript to work with and manipulate or data.
+
+### Interactive elements:
+On the main page we will have a description and overview of the project.  We will also have an interactive element on the page where the user can use a dropdown button to change between a top 10 list of either cases or deaths aggregated by county.  On the second page, the viewer will be able to enter in a fips code and the map will automatically load to a properly zoomed out veiw of the selected county.  Once the fips code is entered some recent covid-19 data about that county will also be presented.  On the third page, we will have the same fips code filter on the top of the page.  Once the fips code is entered the two charts below will populate with data specific to the filtered fips code.  Some ideas for the charts will be cases by date, deaths by date, or hospital bed capacity for that county.
