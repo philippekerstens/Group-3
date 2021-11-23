@@ -12,6 +12,9 @@
 ### Database 3 : https://github.com/nytimes/covid-19-data - NYT data github page
 ### Database 4 : https://github.com/owid/covid-19-data - One World Data github page
 ### Database 5 : https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-County/8xkx-amqh - Vaccination data (CDC)
+## Communication Protocols 
+### Main communication was done through zoom and slack
+### Emails and phone numbers were exchanged as potential fallbacks to cover all bases as a redundancy
 
 ### Machine Learning Model
 1. Description of preliminary data preprocessing:
