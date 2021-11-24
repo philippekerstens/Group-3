@@ -40,12 +40,27 @@
                 <ul class="list-group">
                     <li class="list-group-item"> <!--added items for the following-->
                         <label for="date">Enter Fips Code</label>
-                        <input type="text" class='form-control' placeholder="01001" id="datetime" />
+                        <input type="text" class='form-control' placeholder="01001" id="fips_code" />
+                    </li>
+                    <li class="list-group-item bg-dark">
+                        <button id="filter-btn" type="button" class="btn btn-dark">Filter Chart</button>
                     </li>
                 </ul>
             </div>  
         </div>
     </div>  
     <h1>Put Charts Here</h1>
+    <div class='row'>
+        <div class='col-md-2'>
+
+        </div>
+        <div class='col-md-10'>
+            <div id='barplot'></div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <script src='../static/js/plots.js'></script>
 </body>
 </html>

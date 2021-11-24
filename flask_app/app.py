@@ -35,13 +35,31 @@ def maps():
 
 @app.route('/charts')
 def charts():
+    return render_template('page3.html')
+
+@app.route('/api/chart_data')
+def chart_data():
 
     cases = session.query(Counties.collection_week, Counties.cases_to_date).\
         filter(Counties.collection_week >= '2021-01-01').all()
     
     precip = {str(collection_week): cases_to_date for collection_week, cases_to_date in cases}
 
-    return jsonify(precip)
+
+    # This code selects the desired county and queries the database to pull up only dates and cases for that county
+    def cases():
+
+        county = session.query(Counties.fips_date, Counties.cases_to_date).all()
+            #filter(Counties.fips == '1001.0').all() # need to get the filter to be the javascript variable
+
+        county_by_date = {str(fips_date): cases_to_date for fips_date, cases_to_date in county}
+
+        # c = session.query(Counties.collection_week, Counties.fips, Counties.cases_to_date).all()
+        # c_json = {fips: collection_week, cases_to_date for fips, collection_week, cases_to_date in c}
+        
+        return(county_by_date)
+
+    return jsonify(cases())
 
 
 if __name__ == '__main__':
