@@ -1,5 +1,5 @@
-function build_chart(data){
-    d3.json("http://localhost:5000/api/chart_data").then(function(result) {
+function build_cases_chart(){
+    d3.json("http://localhost:5000/api/case_data").then(function(result) {
     
 
     // 
@@ -16,21 +16,53 @@ function build_chart(data){
           type: 'bar'
         }
       ];
-      
-      Plotly.newPlot('barplot', data);
+    var layout = {
+    title: 'Cases by Week',
+    xaxis: {title: 'Date'},
+    yaxis: {title: 'Cases'},
+    }  
+      Plotly.newPlot('caseplot', data, layout);
 })
 }
 
-//build_chart()
+function build_deaths_chart(){
+    let fips = d3.select("#fips_filter").property("value");
+    console.log(fips)
+    d3.json("http://localhost:5000/death_data" + fips + "#").then(function(result) {
+    
 
+    // 
+
+    var x = Object.keys(result)
+    var y = Object.values(result)
+    console.log(x)
+    console.log(y)
+
+    var data = [
+        {
+          x: x,
+          y: y,
+          type: 'bar'
+        }
+      ];
+    var layout = {
+    title: 'Deaths by Week',
+    xaxis: {title: 'Date'},
+    yaxis: {title: 'Deaths'}
+    }
+      Plotly.newPlot('deathplot', data, layout);
+})
+}
+build_cases_chart()
+build_deaths_chart()
 
 // handleClick is functional - it can capture the value entered into the fips_code filter
 // now we need to be able to get the fips_code value into the cases function in the flask app.
 function handleClick() {
 
-    let fips = d3.select("#fips_code").property("value");
+    let fips = d3.select("#fips_filter").property("value");
     console.log(fips)
-    d3.json("http://localhost:5000/api/chart_data").then(function(result) {
+    d3.json("http://localhost:5000/api/case_data").then(function(result) {
         console.log(result)
     
         // if (fips.include(result)) {
