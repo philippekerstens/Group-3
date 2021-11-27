@@ -26,12 +26,7 @@ function build_cases_chart(){
 }
 
 function build_deaths_chart(){
-    let fips = d3.select("#fips_filter").property("value");
-    console.log(fips)
-    d3.json("http://localhost:5000/death_data" + fips + "#").then(function(result) {
-    
-
-    // 
+    d3.json("http://localhost:5000/api/death_data").then(function(result) {
 
     var x = Object.keys(result)
     var y = Object.values(result)
