@@ -20,14 +20,20 @@ Data was exported from The New York Times (referred to as the 'counties' dataset
 The initial data cleaning notebook, Deliverable_1_input_data, then uses pandas to read three datasets into individual dataframes. Unnecessary columns are then dropped from all three dataframes, including columns with categorical and some float data types, age range columns, and hospital coverage columns. The 'hospitals' dataset only contains weekly aggregations of its data, while the other two datasets contain daily reporting. The 'counties' and 'vaccinations' datasets are aggregated to report weekly totals on the same collection dates as 'hospitals'. To provide a common primary key among the three dataframes, the fips and date columns are turned into and string datatype and concatenated to fomr the fips_date coulmn. A list of unique fips_date values was generated and then removed from all three dataframes, to return equal length dataframes that can easily be merge in PostgreSQL. The remaining float data types are then converted to integers in all three dataframes. Column names are abbreviated to prevent truncating them in SQL. A connection string is then created using create_engine from sqlalchemy to create the schema and load the data into tables in PostgreSQL. After being loaded, the schema needs to be adjusted to create primary keys (fips_date) for the three tables. 
 
 ##### Secondary Data Cleaning
-The data is then read back into the next notebook, Postgres to ML Model Connection, using a SQL join for 'counties' and 'hospitals' creating merged_df and using 'vaccinations' to create vaccinations_df. The two dataframes are then merged and redundant columns are dropped to create ml_ready_df, which contains data from all three tables. Percentage and totals columns are then created adding and/or dividing columns by one another. Infinite values are then changed to NaN and all null rows are dropped.
+The data is then read back into the next notebook, Postgres to ML Model Connection, using a SQL join for 'counties' and 'hospitals' creating merged_df and using 'vaccinations' to create vaccinations_df. The two dataframes are then merged and redundant columns are dropped to create ml_ready_df, which contains data from all three tables. Percentage and totals columns are then created adding and/or dividing columns by one another. Infinite values are then changed to NaN and all null rows are dropped. Subsequently, four bar graphs that may fit into our interactive dashboard were generated for Multnomah County.
+
+![Cases to Date Multnomah County](https://user-images.githubusercontent.com/86164867/143787066-f606c6dd-838d-4231-883b-ba5c3c7bff18.png)
+![Deaths to Date Multnomah County](https://user-images.githubusercontent.com/86164867/143787067-29b3e9f2-0347-4656-bcab-3329df435535.png)
+![Percent of Population Fully Vaccinated Multnomah County](https://user-images.githubusercontent.com/86164867/143787070-e00093e7-df46-482c-8490-908e59f0d4bf.png)
+![Percentage of Inpatient Beds Used Multnomah County](https://user-images.githubusercontent.com/86164867/143787071-22879287-ea33-4161-abaf-a9b1136b59b0.png)
+
 
 ### Database Recreation instructions
-1. Create a database called COVID_Risk_Final_Project in pgAdmin using the PostgreSQL 13 server.
-2. Alter the config.py file to contain your Postgres password.
+1. Create a database called COVID_Risk_Analysis in pgAdmin using the PostgreSQL 13 server.
+2. Alter the config.py file to contain your Postgres password in the connection string.
 3. Run the Deliverable_1_input_data.ipynb notebook in its entirety.
-4. Using the query tool in pgAdmin on the COVID_Risk_Final_Project database, run the following queries to create primary keys for both tables: 
-ALTER TABLE counties ADD PRIMARY KEY (fips_date); ALTER TABLE hospitals ADD PRIMARY KEY (fips_date);
+4. Using the query tool in pgAdmin on the COVID_Risk_Analysis database, run the following queries to create primary keys for both tables: 
+ALTER TABLE counties ADD PRIMARY KEY (fips_date); ALTER TABLE hospitals ADD PRIMARY KEY (fips_date); ALTER TABLE vaccinations ADD PRIMARY KEY (fips_date);
 4. Run the 'Postgres to ML Model' notebook in its entirety to join the tables and connect the database to the machine learning model.
 
 
