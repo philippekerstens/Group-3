@@ -6,12 +6,12 @@ Our group topic is Hospital Bed Availability, something that we chose because of
 This project focus was chosen as we wished to choose something relevant to our current times and events.  We feel strongly that the proper allocation of resources is paramount to getting us all through this pandemic.
 
 ## How this project is set up:
-This project was created in 3 main phases.
+This project was created in 3 main parts.
   * Phase 1: Data retrival, exploration, and database creation
   * Phase 2: Implementing the machine learning model
   * Phase 3: Creation of the dashboard
 
-## Phase 1: Data retrival, exploration, and database creation - 
+## Part 1: Data retrival, exploration, and database creation - 
 
 ### Database Recreation instructions
 1. Create a database called COVID_Risk_Final_Project in pgAdmin using the PostgreSQL 13 server.
@@ -22,7 +22,7 @@ ALTER TABLE counties ADD PRIMARY KEY (fips_date); ALTER TABLE hospitals ADD PRIM
 4. Run the 'Postgres to ML Model' notebook in its entirety to join the tables and connect the database to the machine learning model.
 
 
-## Phase 2: Implementing the machine learning model -
+## Part 2: Implementing the machine learning model -
 
 ### Machine Learning Model
 1. Description of preliminary data preprocessing:
@@ -41,7 +41,7 @@ For both linear regression model, dependent variable X is reshaped to specify th
 
 The dataset we have is manipulated for continous variables. Supervised machine learning models fits to the dataset we have and also incline to have somewhat pair variables. Thus it was difficult to presume which variables can have possible relationship each other outside of their pairs. Linear regression model can be most effective tool to analyze these paird associated variables. The limitation of our model it's linearity. Due to multiple possible causes that are not counted in our dataset, it's linearity could be temporary (vaccination status, weather and location) or irrelevant because strong correlation does not mean it is cause and effect relationship. The benefit of linear regression is that we can build and see the relationship between the variables intuitively that could have cause and effect relationship. It is easier to interpret compare to other side of machine learning methods, which can provide meaningful relationships with what dataset we have.   
 
-## Phase 3: Creation of the dashboard -
+## Part 3: Creation of the dashboard -
 
 ## Dashboard:
 The layout of the dashboard can be viewed on our google slide presentation deck.  
@@ -52,7 +52,7 @@ The dashboard is being created using a flask app that is able to tap into our SQ
 On the main page we will have a description and overview of the project.  We will also have an interactive element on the page where the user can use a dropdown button to change between a top 10 list of either cases or deaths aggregated by county.  On the second page, the viewer will be able to enter in a fips code and the map will automatically load to a properly zoomed out veiw of the selected county.  Once the fips code is entered some recent covid-19 data about that county will also be presented.  On the third page, we will have the same fips code filter on the top of the page.  Once the fips code is entered the two charts below will populate with data specific to the filtered fips code.  Some ideas for the charts will be cases by date, deaths by date, or hospital bed capacity for that county.
 
 
-## Please follow the links below to view our slide show presentation and view the raw data sources:
+### Please follow the links below to view our slide show presentation and view the raw data sources:
 Slideshow  : https://docs.google.com/presentation/d/19MMd_3xDyaQTVIac4mx9ayKighQCOw1OY78eupEQc3c/edit?usp=sharing
 
 Hospital data: https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/anag-cw7u  
