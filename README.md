@@ -23,8 +23,11 @@ The initial data cleaning notebook, Deliverable_1_input_data, then uses pandas t
 The data is then read back into the next notebook, Postgres to ML Model Connection, using a SQL join for 'counties' and 'hospitals' creating merged_df and using 'vaccinations' to create vaccinations_df. The two dataframes are then merged and redundant columns are dropped to create ml_ready_df, which contains data from all three tables. Percentage and totals columns are then created adding and/or dividing columns by one another. Infinite values are then changed to NaN and all null rows are dropped. Subsequently, four bar graphs that may fit into our interactive dashboard were generated for Multnomah County.
 
 ![Cases to Date Multnomah County](https://user-images.githubusercontent.com/86164867/143787066-f606c6dd-838d-4231-883b-ba5c3c7bff18.png)
+
 ![Deaths to Date Multnomah County](https://user-images.githubusercontent.com/86164867/143787067-29b3e9f2-0347-4656-bcab-3329df435535.png)
+
 ![Percent of Population Fully Vaccinated Multnomah County](https://user-images.githubusercontent.com/86164867/143787070-e00093e7-df46-482c-8490-908e59f0d4bf.png)
+
 ![Percentage of Inpatient Beds Used Multnomah County](https://user-images.githubusercontent.com/86164867/143787071-22879287-ea33-4161-abaf-a9b1136b59b0.png)
 
 
