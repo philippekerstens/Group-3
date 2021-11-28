@@ -55,6 +55,9 @@ On the main page we will have a description and overview of the project.  We wil
 ## Please follow the links below to view our slide show presentation and view the raw data sources:
 Slideshow  : https://docs.google.com/presentation/d/19MMd_3xDyaQTVIac4mx9ayKighQCOw1OY78eupEQc3c/edit?usp=sharing
 
-Hospital data: https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/anag-cw7u
-NYT data github page: https://github.com/nytimes/covid-19-data
-Vaccination data (CDC): https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-County/8xkx-amqh
+Hospital data: https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/anag-cw7u  
+
+NYT data github page: https://github.com/nytimes/covid-19-data  
+
+Vaccination data (CDC): https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-County/8xkx-amqh  
+
