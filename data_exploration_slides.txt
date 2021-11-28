@@ -1,0 +1,31 @@
+Technologies Used:
+Pandas
+SQLAlchemy
+Numpy
+Matplotlib
+PostgreSQL
+
+Text/layout for slides (each line is a bullet point or image place holder, blank lines indicate the start of a new slide):
+
+Data was exported from three sources and loaded into S3 buckets then converted into CSVs using Pandas.
+Hospital Data (healthdata.gov): https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/anag-cw7u
+Counties Data (NYT): https://github.com/nytimes/covid-19-data
+Vaccination Data (CDC): https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-County/8xkx-amqh
+
+Counties dataframe is aggregated to show weekly totals instead of daily
+Redundant, categorical, unnecessary, and percentage/ratio columns are dropped from all three datasets.
+The fips_date column is created for all three tables to provide a unique primary key, by concatenating the fips and date columns.
+A list is generated with unique fips_date values from all three tables, then all rows containing these values are removed.
+
+Column names are abbreviated to prevent truncating in PostgreSQL.
+Using a sqlalchemy connection string, the table schemas are created and the data is loaded into PostgreSQL. 
+Using the query tool, all three tables have a primary key of fips_date added to their schema.
+
+Using the same connection string, the counties and hispitals tables are read back into one pandas dataframe using a SQL inner join.
+The vaccination table is read into a pandas dataframe, and then merged with the counties/hospitals merged dataframe.
+Percentage and total rows are recreated using arithmatic on existing columns.
+Rows with infinite and null values are eliminated.
+The dataframe is then sorted in descending order by fips_date.
+
+To test the potential of the interactive dashboard, several bar charts were plotted using data for Multnomah County:
+ALL FOUR CHARTS FROM data_exploration_images should be included on this slide. Images of data preprocessing can be found in the data_exploration_images_file on the main branch.  
