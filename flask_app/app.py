@@ -20,6 +20,7 @@ dbConnection = engine.connect()
 # Create references to the database
 Counties = Base.classes.counties
 Hospitals = Base.classes.hospitals
+#Vaccinations = Base.classes.vaccinations
 
 # Create a session
 se = Se(engine)

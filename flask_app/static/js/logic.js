@@ -97,6 +97,11 @@ L.control.layers(baseMaps).addTo(map);
 // Accessing the Toronto neighborhoods GeoJSON URL.
 let torontoHoods = "https://raw.githubusercontent.com/kowiak89/mapping-earthquakes/main/torontoNeighborhoods.json";
 let usCounties = 'https://raw.githubusercontent.com/kowiak89/mapping-earthquakes/Earthquakes_past7days/usCounties.json';
+
+
+var fips_code = '<%= Session["fips_code"] %>';
+
+
 // Grabbing our GeoJSON data.
 d3.json(usCounties).then(function(data) {
   console.log(data);
@@ -104,4 +109,15 @@ d3.json(usCounties).then(function(data) {
 L.geoJson(data).addTo(map);
 });
 
-console.log(usCounties.features.properties.city);
+function onEachFeature(feature, layer) {
+  // does this feature have a property named popupContent?
+  if (str(fips_code) == (feature.properties.STATE + feature.properties.COUNTY)) {
+    var bounds = feature.geometry.coordinates
+    console.log(bounds)
+    layer.flyToBounds(bounds);
+  }
+}
+L.geoJSON(usCounties, {
+  onEachFeature: onEachFeature
+}).addTo(map);
+// console.log(usCounties.features.properties.city);

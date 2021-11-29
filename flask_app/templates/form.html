@@ -27,15 +27,30 @@
         <!-- Build the nav-bar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-nav" href="/form">Fips Form</a>
             <!-- <a class="navbar-nav" href="/maps">Interactive Maps</a> -->
-            <a class="nav-item nav-link" href="/charts">Interactive Charts</a>
+            <!-- <a class="nav-item nav-link" href="/charts">Interactive Charts</a> -->
         </nav>
     </div>
-    <form action="#" method = "POST">
-        <p>Enter fips code <input type = "text" name = "fc" id='fips_filter'/></p>
-        <!-- <p>Field2 <input type = "text" name = "Field2_name" /></p>
-        <p>Field3 <input type = "text" name = "Field3_name" /></p> -->
-        <p><input type = "submit" value = "submit" /></p>
-    </form>
+    <div class="container-fluid">
+        <div class="row">
+            <div class='col-md-3'> 
+                <form action="#" method = "POST">
+                    <p>Enter fips code <input type = "text" name = "fc" id='fips_filter'/></p>
+                    <!-- <p>Field2 <input type = "text" name = "Field2_name" /></p>
+                    <p>Field3 <input type = "text" name = "Field3_name" /></p> -->
+                    <p><input type = "submit" value = "submit" /></p>
+                </form>
+            </div>
+            <div class='col-md-3'>
+                <p>
+                    <h3>Fips codes represent specific counties in the United states. Some example codes to try are:</h3><br><br>
+                        * 1001.0<br><br>
+                        * 17159.0<br><br>
+                        * 42105.0<br><br>
+                </p>
+            </div>
+        </div>
+    </div>            
 </body>
 </html>

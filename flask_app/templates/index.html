@@ -27,8 +27,9 @@
         <!-- Build the nav-bar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-nav" href="/form">Fips Form</a>
             <!-- <a class="nav-item nav-link" href="/maps">Interactive Maps</a> -->
-            <a class="nav-item nav-link" href="/charts">Interactive Charts</a>
+            <!-- <a class="nav-item nav-link" href="/charts">Interactive Charts</a> -->
         </nav>
         <!-- The jumbotron div -->
         <div class='jumbotron'>
@@ -78,9 +79,11 @@
                   Intial Exploration and Database Creation<br><br>
                   The initial data cleaning notebook, Deliverable_1_input_data, then uses pandas to read three datasets into individual dataframes. Unnecessary columns are then dropped from all three dataframes, including columns with categorical and some float data types, age range columns, and hospital coverage columns. The 'hospitals' dataset only contains weekly aggregations of its data, while the other two datasets contain daily reporting. The 'counties' and 'vaccinations' datasets are aggregated to report weekly totals on the same collection dates as 'hospitals'. To provide a common primary key among the three dataframes, the fips and date columns are turned into and string datatype and concatenated to fomr the fips_date coulmn. A list of unique fips_date values was generated and then removed from all three dataframes, to return equal length dataframes that can easily be merge in PostgreSQL. The remaining float data types are then converted to integers in all three dataframes. Column names are abbreviated to prevent truncating them in SQL. A connection string is then created using create_engine from sqlalchemy to create the schema and load the data into tables in PostgreSQL. After being loaded, the schema needs to be adjusted to create primary keys (fips_date) for the three tables.<br><br>
                   Secondary Data Cleaning<br><br>
-                  The data is then read back into the next notebook, Postgres to ML Model Connection, using a SQL join for 'counties' and 'hospitals' creating merged_df and using 'vaccinations' to create vaccinations_df. The two dataframes are then merged and redundant columns are dropped to create ml_ready_df, which contains data from all three tables. Percentage and totals columns are then created adding and/or dividing columns by one another. Infinite values are then changed to NaN and all null rows are dropped.
-
+                  The data is then read back into the next notebook, Postgres to ML Model Connection, using a SQL join for 'counties' and 'hospitals' creating merged_df and using 'vaccinations' to create vaccinations_df. The two dataframes are then merged and redundant columns are dropped to create ml_ready_df, which contains data from all three tables. Percentage and totals columns are then created adding and/or dividing columns by one another. Infinite values are then changed to NaN and all null rows are dropped.<br><br>
+                  The images below were from our initial analysis of what the data looked like and include barcharts of case data vs time and hospital capacity vs time.
                 </p>
+                <img src="../static/images/Cases.png" alt='case_image' style="width:750px;height:400px;">
+                <img src="../static/images/hospital_capacity.png" alt='hospital' style="width:750px;height:400px;">
               </div>
               <div class='col-md-6'>
                 <p>
@@ -96,11 +99,14 @@ For both linear regression model, dependent variable X is reshaped to specify th
 
 Model choice:<br><br>
 The dataset we have is manipulated for continous variables. Supervised machine learning models fits to the dataset we have and also incline to have somewhat pair variables. Thus it was difficult to presume which variables can have possible relationship each other outside of their pairs. Linear regression model can be most effective tool to analyze these paird associated variables. The limitation of our model it's linearity. Due to multiple possible causes that are not counted in our dataset, it's linearity could be temporary (vaccination status, weather and location) or irrelevant because strong correlation does not mean it is cause and effect relationship. The benefit of linear regression is that we can build and see the relationship between the variables intuitively that could have cause and effect relationship. It is easier to interpret compare to other side of machine learning methods, which can provide meaningful relationships with what dataset we have.<br><br>
+The images below were grabbed during analysis of the model.
                 </p>
+                <img src="../static/images/bokeh_plot.png" alt='bokeh_image' style="width:750px;height:400px;">
+                <img src="../static/images/newplot.png" alt='newplot' style="width:750px;height:400px;">
               </div>
             </div>
         </div>
     </div>  
-
+    
 </body>
 </html>
