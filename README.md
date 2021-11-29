@@ -76,6 +76,9 @@ The dataset we have is manipulated for continous variables. Supervised machine l
 ## Part 3: Creation of the dashboard -
 ## Dashboard:
 The layout of the dashboard can be viewed on our google slide presentation deck.  
+
+You can recreate the dashboard locally by first imorting the necessary imports and then running python app.py in the terminal.  Then copy the localhost web address in the terminal and paste it into a browser to veiw the dashboard.
+
 ### Technology for the dashboard:
 The dashboard is being created using a flask app that is able to tap into our SQL database.  One we have acheived a connection to our database, we will be querying the data to use in our interactive map and charts on page 2 and 3 respectively.  We are using bootsrap and some custom CSS to sylyze the dashboard.  We are using D3 and javascript to work with and manipulate or data.
 
