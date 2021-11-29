@@ -42,9 +42,8 @@
                 </div>
                 <div class="col-md-9">
                     <p>
-                      Our group topic is Hospital Bed Availability, something that we chose because of its importance in the face of this Covid Pandemic, especially in regards to the difficulty of the early weeks of the pandemic where medical supplies were lacking, and there were difficulties in finding beds in hospitals to deal with the surge in patients.<br><br>
-It is this projects intention to compile a self-updating database of which it can be utilized by hospitals and governments on the local, state, and national level in keeping track of hospital bed availability as well as preventing overflow and being able to have oversight over vast regions to better handle emergencies like the pandemic.<br><br>
-By creating this project database we will be able to not only track availability of hospitals during emergencies anv normal times, but also see which hospitals would need the most resources or assistance, especially with the county data which allows us to consider the per capita ratio of hospital bed availability.
+                      Our group topic is Hospital Bed Availability, something that we chose because of its importance in the face of the Covid-19 Pandemic, especially in regards to the difficulty of the early weeks of the pandemic where medical supplies were lacking, and there were difficulties in finding beds in hospitals to deal with the surge in patients. It is this projects intention to compile a database that can be utilized by healthcare and county officials to recognize when their healthcare systems begin to become overloaded.<br><br>
+                      This project focus was chosen as we wished to choose something relevant to our current times and events. We feel strongly that the proper allocation of resources is paramount to getting us all through this pandemic.
                     </p>
                 </div>
                 <!-- <div class='col-md-2'>  Build the table
@@ -73,7 +72,14 @@ By creating this project database we will be able to not only track availability
             <div class='row'>
               <div class='col-md-6'>
                 <p>
-                  <h3>Data Exploration</h3>
+                  <h3>Data Exploration</h3><br><br>
+                  Data Retrtieval<br><br>
+                  Data was exported from The New York Times (referred to as the 'counties' dataset), CDC ('vaccinations' dataset), and healthdata.gov ('hospitals' dataset). The three datasets were then loaded into S3 buckets as they are too large to upload to github.<br><br>
+                  Intial Exploration and Database Creation<br><br>
+                  The initial data cleaning notebook, Deliverable_1_input_data, then uses pandas to read three datasets into individual dataframes. Unnecessary columns are then dropped from all three dataframes, including columns with categorical and some float data types, age range columns, and hospital coverage columns. The 'hospitals' dataset only contains weekly aggregations of its data, while the other two datasets contain daily reporting. The 'counties' and 'vaccinations' datasets are aggregated to report weekly totals on the same collection dates as 'hospitals'. To provide a common primary key among the three dataframes, the fips and date columns are turned into and string datatype and concatenated to fomr the fips_date coulmn. A list of unique fips_date values was generated and then removed from all three dataframes, to return equal length dataframes that can easily be merge in PostgreSQL. The remaining float data types are then converted to integers in all three dataframes. Column names are abbreviated to prevent truncating them in SQL. A connection string is then created using create_engine from sqlalchemy to create the schema and load the data into tables in PostgreSQL. After being loaded, the schema needs to be adjusted to create primary keys (fips_date) for the three tables.<br><br>
+                  Secondary Data Cleaning<br><br>
+                  The data is then read back into the next notebook, Postgres to ML Model Connection, using a SQL join for 'counties' and 'hospitals' creating merged_df and using 'vaccinations' to create vaccinations_df. The two dataframes are then merged and redundant columns are dropped to create ml_ready_df, which contains data from all three tables. Percentage and totals columns are then created adding and/or dividing columns by one another. Infinite values are then changed to NaN and all null rows are dropped.
+
                 </p>
               </div>
               <div class='col-md-6'>

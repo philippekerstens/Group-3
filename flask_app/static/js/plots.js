@@ -1,5 +1,5 @@
 function build_cases_chart(){
-    d3.json("http://localhost:5000/api/case_data").then(function(result) {
+    d3.json("/api/case_data").then(function(result) {
     
 
     // 
@@ -26,7 +26,7 @@ function build_cases_chart(){
 }
 
 function build_deaths_chart(){
-    d3.json("http://localhost:5000/api/death_data").then(function(result) {
+    d3.json("/api/death_data").then(function(result) {
 
     var x = Object.keys(result)
     var y = Object.values(result)
