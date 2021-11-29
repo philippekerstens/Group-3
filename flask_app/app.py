@@ -1,3 +1,9 @@
+# To view the dashboard on the browser:
+    # 1. Make sure all the dependencies or imported 
+    # 2. Open the terminal and run python app.py
+    # 3. Copy the web addres ('http://) and paste it into your browser
+    # 4. Enjoy the dasboard
+
 import datetime as dt
 
 from flask.helpers import url_for
