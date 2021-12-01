@@ -7,11 +7,9 @@
 ### This project focus was chosen as we wished to choose something relevant to our current times and events, and in regards of covid, we discovered the potential for improving and avoiding these issues in the future, or at least aiding those that wish to avoid such crisises again.
 ## Links and Sources
 ### Slideshow  : https://docs.google.com/presentation/d/19MMd_3xDyaQTVIac4mx9ayKighQCOw1OY78eupEQc3c/edit?usp=sharing
-### Database 1 : https://apidocs.covidactnow.org/ - API for covid data
-### Database 2 : https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/anag-cw7u - hospital aggregated data
-### Database 3 : https://github.com/nytimes/covid-19-data - NYT data github page
-### Database 4 : https://github.com/owid/covid-19-data - One World Data github page
-### Database 5 : https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-County/8xkx-amqh - Vaccination data (CDC)
+### Database 1 (Hospitals) : https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/anag-cw7u - hospital aggregated data
+### Database 2 (Counties) : https://github.com/nytimes/covid-19-data - NYT data github page
+### Database 3 (Vaccinations) : https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-County/8xkx-amqh - Vaccination data (CDC)
 =======
 ## Project Focus:
 Our group topic is Hospital Bed Availability, something that we chose because of its importance in the face of the Covid-19 Pandemic, especially in regards to the difficulty of the early weeks of the pandemic where medical supplies were lacking, and there were difficulties in finding beds in hospitals to deal with the surge in patients.  It is this projects intention to compile a database that can be utilized by healthcare and county officials to recognize when their healthcare systems begin to become overloaded.
@@ -86,15 +84,5 @@ The dashboard is being created using a flask app that is able to tap into our SQ
 On the main page we will have a description and overview of the project.  We will also have an interactive element on the page where the user can use a dropdown button to change between a top 10 list of either cases or deaths aggregated by county.  On the second page, the viewer will be able to enter in a fips code and the map will automatically load to a properly zoomed out veiw of the selected county.  Once the fips code is entered some recent covid-19 data about that county will also be presented.  On the third page, we will have the same fips code filter on the top of the page.  Once the fips code is entered the two charts below will populate with data specific to the filtered fips code.  Some ideas for the charts will be cases by date, deaths by date, or hospital bed capacity for that county.
 =======
 On the main page we will have a description and overview of the project.  There are two sections below the main project overview that detail both the data exploration and database creation, and the machine learning model process and analysis.  On the second page, the viewer will be able to enter in a fips code, which will then create a query of our database that is used to build multiple charts that are displayed on the following page.  The user can then enter a new fips code on the form page to reload the charts for that specific fips code.
-
-
-### Please follow the links below to view our slide show presentation and view the raw data sources:
-Slideshow  : https://docs.google.com/presentation/d/19MMd_3xDyaQTVIac4mx9ayKighQCOw1OY78eupEQc3c/edit?usp=sharing
-
-Hospital data: https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/anag-cw7u  
-
-NYT data github page: https://github.com/nytimes/covid-19-data  
-
-Vaccination data (CDC): https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-County/8xkx-amqh  
 
 
