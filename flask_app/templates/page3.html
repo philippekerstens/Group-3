@@ -32,6 +32,12 @@
             <!-- <a class="nav-item nav-link" href="/charts">Interactive Charts</a> -->
         </nav>
     </div>
+    <div>
+        <h1>Covid-19 Charts</h1>
+        <p>
+            *To change fips code please use the Fips Form
+        </p>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class='col-md-3'> <!--Build the filter button-->
@@ -72,17 +78,25 @@
             <div id='deathplot'></div>
         </div>
     </div>
+    <div class='row'>
+        <div class='col-md-6'>
+            <div id='hospitalplot'></div>
+        </div>
+        <div class='col-md-6'>
+            <div id='vaxplot'></div>
+        </div>
+    </div>
     <!-- <div id="mapid"></div> -->
     
 
     <!-- Leaflet JavaScript -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    <!-- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
+    crossorigin=""></script> -->
     <!-- API key -->
     <script type="text/javascript" src="static/js/config.js"></script>
     <!-- Our JavaScript -->
-    <script type="text/javascript" src="static/js/logic.js"></script> 
+    <!-- <script type="text/javascript" src="static/js/logic.js"></script>  -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>

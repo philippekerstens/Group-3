@@ -1,1 +1,1 @@
-connection_string = 'postgresql+psycopg2://postgres:#Summer2021@127.0.0.1:5432/COVID_Risk_Final_Project'
+connection_string = 'postgresql+psycopg2://postgres:#Summer2021@127.0.0.1:5432/COVID_Risk_Analysis'

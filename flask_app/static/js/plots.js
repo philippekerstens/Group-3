@@ -1,8 +1,5 @@
 function build_cases_chart(){
     d3.json("/api/case_data").then(function(result) {
-    
-
-    // 
 
     var x = Object.keys(result)
     var y = Object.values(result)
@@ -48,6 +45,55 @@ function build_deaths_chart(){
       Plotly.newPlot('deathplot', data, layout);
 })
 }
+
+function build_hospital_chart(){
+  d3.json('/api/hospital_data').then(function(result) {
+
+  var x = Object.keys(result)
+  var y = Object.values(result)
+  console.log(x)
+  console.log(y)
+
+  var data = [
+      {
+        x: x,
+        y: y,
+        type: 'bar'
+      }
+    ];
+  var layout = {
+  title: 'ICU beds in use by Week',
+  xaxis: {title: 'Date'},
+  yaxis: {title: 'ICU Beds in Use'}
+  }
+    Plotly.newPlot('hospitalplot', data, layout);
+})
+}
+function build_vax_chart(){
+  d3.json('/api/vax_data').then(function(result) {
+
+  var x = Object.keys(result)
+  var y = Object.values(result)
+  console.log(x)
+  console.log(y)
+
+  var data = [
+      {
+        x: x,
+        y: y,
+        type: 'bar'
+      }
+    ];
+  var layout = {
+  title: 'Vaccination Series Complete',
+  xaxis: {title: 'Date'},
+  yaxis: {title: 'Series Complete'}
+  }
+    Plotly.newPlot('vaxplot', data, layout);
+})
+}
+build_vax_chart()
+build_hospital_chart()
 build_cases_chart()
 build_deaths_chart()
 

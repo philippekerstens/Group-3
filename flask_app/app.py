@@ -24,8 +24,9 @@ Base = automap_base()
 Base.prepare(engine, reflect=True)
 dbConnection = engine.connect()
 # Create references to the database
-Counties = Base.classes.counties
-Hospitals = Base.classes.hospitals
+Counties = Base.classes.counties_charts
+Hospitals = Base.classes.hospital_chart
+Vaccinations = Base.classes.vaccinations_chart
 #Vaccinations = Base.classes.vaccinations
 
 # Create a session
@@ -56,22 +57,9 @@ def charts():
         return render_template("page3.html")
     else:
         return redirect(url_for('form'))
-    # if request.method == 'GET':
-    #     return render_template('page3.html')
-    # if request.method == 'POST':
-    #     fips_code = request.form['fc']
-    #     return render_template('page3.html', fips_code=fips_code)
-        #redirect(url_for('death_data', fips_code = death_data))
-   # return render_template('page3.html')
 
 @app.route('/api/case_data')
 def case_data():
-    cases = se.query(Counties.collection_week, Counties.cases_to_date).\
-        filter(Counties.collection_week >= '2021-01-01').all()
-    
-    precip = {str(collection_week): cases_to_date for collection_week, cases_to_date in cases}
-
-
     # This code selects the desired county and queries the database to pull up only dates and cases for that county
     def cases():
         if "fips_code" in session:
@@ -101,6 +89,34 @@ def death_data():
             return(deaths_by_date)
     
     return jsonify(deaths())
+
+@app.route('/api/hospital_data')
+def hospital_data():
+    def hospital():
+        if "fips_code" in session:
+            fips_code = session['fips_code']
+            capacity = se.query(Hospitals.collection_week, Hospitals.Percentage_inpatient_beds_used).\
+                filter(Hospitals.fips_code == fips_code).all()
+
+            capacity_by_date = {str(collection_week): Percentage_inpatient_beds_used for collection_week, Percentage_inpatient_beds_used in capacity}
+
+            return(capacity_by_date)
+    
+    return jsonify(hospital())
+
+@app.route('/api/vax_data')
+def vax_data():
+    def vax():
+        if "fips_code" in session:
+            fips_code = session['fips_code']
+            vax = se.query(Vaccinations.Date, Vaccinations.Series_Complete_Pop_Pct).\
+                filter(Vaccinations.FIPS == fips_code).all()
+
+            vax_by_date = {str(Date): Series_Complete_Pop_Pct for Date, Series_Complete_Pop_Pct in vax}
+
+            return(vax_by_date)
+    
+    return jsonify(vax())
 
 if __name__ == '__main__':
     app.run()
