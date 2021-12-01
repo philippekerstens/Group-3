@@ -45,7 +45,7 @@ The data is then read back into the next notebook, Postgres to ML Model Connecti
 ### Database Recreation instructions
 1. Create a database called COVID_Risk_Analysis in pgAdmin using the PostgreSQL 13 server.
 2. Alter the config.py file to contain your Postgres password in the connection string.
-3. Run the 'Deliverable_1_input_data.ipynb' notebook in its entirety.
+3. Run the 'Input_data.ipynb' notebook in its entirety.
 4. Using the query tool in pgAdmin on the COVID_Risk_Analysis database, run the following queries to create primary keys for both tables: 
 ALTER TABLE counties ADD PRIMARY KEY (fips_date); ALTER TABLE hospitals ADD PRIMARY KEY (fips_date); ALTER TABLE vaccinations ADD PRIMARY KEY (fips_date);
 4. Run the 'ML_Model.ipynb' notebook in its entirety to join the tables and connect the database to the machine learning model.
