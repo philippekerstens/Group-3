@@ -10,7 +10,7 @@
 ### Database 1 (Hospitals) : https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/anag-cw7u - hospital aggregated data
 ### Database 2 (Counties) : https://github.com/nytimes/covid-19-data - NYT data github page
 ### Database 3 (Vaccinations) : https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-County/8xkx-amqh - Vaccination data (CDC)
-=======
+
 ## Project Focus:
 Our group topic is Hospital Bed Availability, something that we chose because of its importance in the face of the Covid-19 Pandemic, especially in regards to the difficulty of the early weeks of the pandemic where medical supplies were lacking, and there were difficulties in finding beds in hospitals to deal with the surge in patients.  It is this projects intention to compile a database that can be utilized by healthcare and county officials to recognize when their healthcare systems begin to become overloaded.
 
@@ -50,8 +50,7 @@ ALTER TABLE counties ADD PRIMARY KEY (fips_date); ALTER TABLE hospitals ADD PRIM
 
 
 
-=======
-=======
+
 ## Part 2: Implementing the machine learning model -
 
 ### Machine Learning Model
@@ -83,11 +82,11 @@ The layout of the dashboard can be viewed on our google slide presentation deck.
 You can recreate the dashboard locally by first imorting the necessary imports and then running python app.py in the terminal.  Then copy the localhost web address in the terminal and paste it into a browser to veiw the dashboard.
 
 ### Technology for the dashboard:
-The dashboard is being created using a flask app that is able to tap into our SQL database.  One we have acheived a connection to our database, we will be querying the data to use in our interactive map and charts on page 2 and 3 respectively.  We are using bootsrap and some custom CSS to sylyze the dashboard.  We are using D3 and javascript to work with and manipulate or data.
+The dashboard is being created using a flask app that is able to tap into our SQL database.  The user will input a unique fips code on a form page, and the POST method will store that value for use in the database queries.  We are using bootsrap and some custom CSS to sylyze the dashboard.  We are using D3 and javascript to work with and manipulate or data.
 
 ### Interactive elements:
-On the main page we will have a description and overview of the project.  We will also have an interactive element on the page where the user can use a dropdown button to change between a top 10 list of either cases or deaths aggregated by county.  On the second page, the viewer will be able to enter in a fips code and the map will automatically load to a properly zoomed out veiw of the selected county.  Once the fips code is entered some recent covid-19 data about that county will also be presented.  On the third page, we will have the same fips code filter on the top of the page.  Once the fips code is entered the two charts below will populate with data specific to the filtered fips code.  Some ideas for the charts will be cases by date, deaths by date, or hospital bed capacity for that county.
-=======
-On the main page we will have a description and overview of the project.  There are two sections below the main project overview that detail both the data exploration and database creation, and the machine learning model process and analysis.  On the second page, the viewer will be able to enter in a fips code, which will then create a query of our database that is used to build multiple charts that are displayed on the following page.  The user can then enter a new fips code on the form page to reload the charts for that specific fips code.
+
+On the main page we will have a description and overview of the project as well as detailed analysis of the data exploration and machine learning processes.  On the fips form page, the user will be able to enter a fips code.  Once they click submit, the fips code entered will be used to query our SQL database and load the next page that shows 4 charts for that specific fips code.  The 4 charts will be cumulative cases per week, cumulative deaths per week, icu bed capacity per week, and cumulative vaccination series complete per week.  The user can then return to the fips form to enter another fips code if they wish.
+
 
 
