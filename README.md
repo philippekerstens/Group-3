@@ -11,12 +11,6 @@
 ### Database 2 (Counties) : https://github.com/nytimes/covid-19-data - NYT data github page
 ### Database 3 (Vaccinations) : https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-County/8xkx-amqh - Vaccination data (CDC)
 
-## Project Focus:
-Our group topic is Hospital Bed Availability, something that we chose because of its importance in the face of the Covid-19 Pandemic, especially in regards to the difficulty of the early weeks of the pandemic where medical supplies were lacking, and there were difficulties in finding beds in hospitals to deal with the surge in patients.  It is this projects intention to compile a database that can be utilized by healthcare and county officials to recognize when their healthcare systems begin to become overloaded.
-
-## Why this project:
-This project focus was chosen as we wished to choose something relevant to our current times and events.  We feel strongly that the proper allocation of resources is paramount to getting us all through this pandemic.
-
 ## How this project is set up:
 This project was created in 3 main parts.
   * Phase 1: Data retrival, exploration, and database creation
@@ -48,9 +42,6 @@ The data is then read back into the next notebook, Postgres to ML Model Connecti
 ALTER TABLE counties ADD PRIMARY KEY (fips_date); ALTER TABLE hospitals ADD PRIMARY KEY (fips_date); ALTER TABLE vaccinations ADD PRIMARY KEY (fips_date);
 ALTER TABLE counties_charts ADD PRIMARY KEY (index); ALTER TABLE hospital_chart ADD PRIMARY KEY (index); ALTER TABLE vaccinations_chart ADD PRIMARY KEY (index);
 4. Run the 'ML_Model.ipynb' notebook in its entirety to join the tables and connect the database to the machine learning model.
-
-
-
 
 ## Part 2: Implementing the machine learning model -
 
