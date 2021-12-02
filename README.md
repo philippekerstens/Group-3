@@ -61,15 +61,20 @@ Both data sets were loaded into S3 buckets. String data type columns were remove
 
 2. Preliminary feature of engineering:
 
-The primary feature of this machine learning model is to classify facilities that are full (ICU bed capacity over 85%) or still spacious (ICU bed capacity lower than 85%). Since the data subset full is smaller than spacious, we oversample it to get meaningful conclusion. We used two method for oversampling, random oversample and SMOTE oversmaple. The goal is to get 80% accuracy with the classification. The other side of machine leaning model is to classify and build 3D model of vaccination completeness percentage, number of cases and percentage of ICU bed used using K-Mean clustering. 
+The primary feature of this machine learning model is to classify facilities that are full (ICU bed capacity over 85%) or still spacious (ICU bed capacity lower than 85%). Since the data subset full (minority) is considerably smaller than spacious (majority), we oversample it to get meaningful conclusion. We used random oversample method instead of SMOTE oversampling method because we didn't want it to select data that are classified spacious. The goal is to get 85% accuracy with the classification model. 
 
 3. How data was split into training and testing sets:
 
-I used sample (n=3500) for the first model due to limitation on my personal device. In case of first model, data is splited with the random state of 42 so that it can generate same train and test sets for different models. It is also stratified with y to ensure train and test sets have same proportion of y data. In case of K-Mean, I sampled 7000 rows from vaccination completeness percentage, number of cases and percentage of ICU bed used due to device limitation. For clustering the data, number of cluster that I aim for is not defined thus the model will drop the number of centroid it find and run with random state of 5 to help it starts with same random data point as centroid. 
+I used sample (n=3500) for the first model due to limitation on my personal device. In case of this model, data is splited with the random state of 42 so that it can generate same train and test sets for different models. It is also stratified with y to ensure train and test sets have same proportion of y data.  
 
 4. Model choice:
 
-The dataset we have is manipulated for continous variables. Supervised machine learning models fits to the dataset we have and also incline to have somewhat pair variables. Thus it was difficult to presume which variables can have possible relationship each other outside of their pairs. Thus I used K-Means to observe the possible clusters among 3 different data columns from different dataset. I choosed 3-D model to visualize the relationship between them. I pulled out percentage of ICU bed capacity from one of our paired dataset, ICU bed used and ICU bed total, and classify it into binary format. In order to see the occupancy of ICU beds in facility, I used supervised machine learning model to classify because every dataset has it's fips code with. Through this we aim to determine which facility in which area are full with ICU.     
+The dataset we have is manipulated for continous variables. Supervised machine learning models fits to the dataset we have and also incline to have somewhat pair variables. Thus it was difficult to presume which variables can have possible relationship each other outside of their pairs. In order to see the occupancy of ICU beds in facility, I used supervised machine learning model to classify because every dataset has it's fips code with. Through this we aim to determine which counties are full with ICU.     
+
+5. Result:
+![스크린샷(137)](https://user-images.githubusercontent.com/85276431/144334005-be12ae6d-bfeb-4de8-98d9-75c9a43be1b5.png)
+
+We got 75% accuracy score that is 10% below our target score, but we agreed it is good enough. We got 91% precision on spacious and 50% precision on full, total of 82% that measure how much reliable a positive classification is. We got high sensitivity score for both majority and minority group and total of 79% that indicate ability to find all the positive samples
 
 ## Part 3: Creation of the dashboard -
 ## Dashboard:
