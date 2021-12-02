@@ -1,0 +1,17 @@
+html,
+body,
+
+#mapid {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.jumbotron {
+    font-size: x-large;
+    color: #f7f7f7;
+    background-image: url("../images/c19_background.jpg");
+    background-size: cover;
+    text-align: center;
+    height: 200px;
+  }

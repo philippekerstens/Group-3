@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Charts</title>
+
+    <!-- Bootstrap CDN -->
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+    />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Build the nav-bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-nav" href="/form">Fips Form</a>
+            <!-- <a class="navbar-nav" href="/maps">Interactive Maps</a> -->
+            <!-- <a class="nav-item nav-link" href="/charts">Interactive Charts</a> -->
+        </nav>
+    </div>
+    <div class='col-md-6'>
+        <form action="#", method="POST">
+            <fieldset>
+              <div class="form-group">
+                <label for="exampleInputPassword1" class="form-label mt-4"><h3>Fips Code</h3></label>
+                <input type="text" class="form-control" name='fc' id="fips_filter" placeholder="1001.0">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <!-- <div class='col-md-3'> 
+                <form action="#" method = "POST">
+                    <p>Enter fips code <input type = "text" name = "fc" id='fips_filter'/></p>
+                    <p>Field2 <input type = "text" name = "Field2_name" /></p>
+                    <p>Field3 <input type = "text" name = "Field3_name" /></p>
+                    <p><input type = "submit" value = "submit" /></p>
+                </form>
+            </div> -->
+            <div class='col-md-6'>
+                <p>
+                    <h3>Fips codes represent specific counties in the United states.  If you would like to look up a fips code for your county please use the following link:</h3><br><br>
+                    <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/or/programs/?cid=nrcs143_013697">Fips Code to County Name Converter</a>
+                </p>
+            </div>
+        </div>
+    </div>   
+    <!-- <div class='panel-group' id='myAccordian'>
+        <div class ='panel panel-primary'>
+            <div class='panel-heading'>
+                <h3 class='panel-title' data-target='#panel-1' data-toggle='collapse' data-parent='myAccordian'>Data Exploration</h3>
+            </div>
+            <div class='panel-collapse collapse' id='panel-1'>
+                <div class='panel-body'>
+                    <p>This is a test to see if this works or not.</p>
+                </div>
+            </div>
+        </div>
+    </div>     -->
+</body>
+</html>
